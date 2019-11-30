@@ -13,7 +13,7 @@ code {
 }
 
 #classicformpage .view {
-  background-image: url("https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://images.pexels.com/photos/988508/pexels-photo-988508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -63,4 +63,83 @@ code {
 
 #classicformpage label {
   color: #fff !important;
+}
+
+#classicformpage .view {
+  background-image: url("https://images.pexels.com/photos/988508/pexels-photo-988508.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+#classicformpage .gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    45deg,
+    from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+}
+
+#LoginFormPage .card {
+  background-color: rgba(86, 84, 153, 0.2);
+}
+
+#LoginFormPage h6 {
+  line-height: 1.2;
+}
+
+#LoginFormPage .navbar {
+  background-color: transparent;
+  /* transition: background 0.5s ease-in-out, padding 0.5s ease-in-out; */
+}
+
+#LoginFormPage .top-nav-collapse {
+  background: #424f95;
+}
+
+@media (max-width: 768px) {
+  #LoginFormPage .navbar:not(.top-nav-collapse) {
+    background: #424f95 !important;
+  }
+}
+
+#LoginFormPage label {
+  color: #fff !important;
+}
+
+#LoginFormPage .view {
+  background-image: url("https://images.pexels.com/photos/545034/pexels-photo-545034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 80vh;
+}
+
+#LoginFormPage .gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    45deg,
+    from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
 }
