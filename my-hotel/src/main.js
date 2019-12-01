@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/dist/css/bootstrap.min.css";
-import $ from "jquery";
 import { BrowserRouter as Router } from "react-router-dom";
+import HotelPage from './HotelPage'
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -32,6 +32,25 @@ export default class App extends Component {
   }
 }
 
+
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <ClassicFormPage />;
+  }
+  return <LoginFormPage />;
+}
+
+function LoginButton(props) {
+  
+  return <p onClick={props.onClick}>Sign Up</p>;
+}
+
+function SignUPButton(props) {
+  return <p onClick={props.onClick}>Login</p>;
+}
+
 class Navbar extends Component {
   state = {
     collapseID: ""
@@ -42,12 +61,31 @@ class Navbar extends Component {
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
 
-  constructor() {
-    super();
-    this.state = { clicked: true };
+
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleSignUPClick = this.handleSignUPClick.bind(this);
+    this.state = { isLoggedIn: false };
+  }
+  handleLoginClick() {
+    this.setState({ isLoggedIn: true });
+  }
+
+  handleSignUPClick() {
+    this.setState({ isLoggedIn: false });
   }
 
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let sel;
+
+    if (isLoggedIn) {
+      sel = <SignUPButton onClick={this.handleSignUPClick} />;
+    } else {
+      sel = <LoginButton onClick={this.handleLoginClick} />;
+    }
+
     const overlay = (
       <div
         id="sidenav-overlay"
@@ -57,8 +95,8 @@ class Navbar extends Component {
     );
     return (
       <div id="navBar">
-        <LoginFormPage />
-        <ProjectsPage />
+        <Greeting isLoggedIn={isLoggedIn} />
+        <HotelPage />
         <Router>
           {/* left side */}
           <div>
@@ -83,15 +121,10 @@ class Navbar extends Component {
                       <MDBNavLink to="#!">Hotel</MDBNavLink>
                     </MDBNavItem>
                     <MDBNavItem>
-                      <MDBNavLink className="nav-item nav-link" to="#!">
-                        <div
-                          onClick={() =>
-                            this.setState({ clicked: !this.state.clicked })
-                          }
-                        >
-                          {this.state.clicked ? "Login" : "Sign Up"}
-                        </div>
-                      </MDBNavLink>
+                      <MDBNavLink 
+                        className="nav-item nav-link"
+                        to="#!"
+                      >{sel}</MDBNavLink>
                     </MDBNavItem>
                   </MDBNavbarNav>
                 </MDBCollapse>
@@ -247,8 +280,6 @@ class LoginFormPage extends Component {
     return (
       <div id="LoginFormPage">
         <MDBView>
-          {" "}
-          {/* sign up from*/}
           <MDBMask
             style={{ paddingTop: 126 }}
             className="d-flex justify-content-center align-items-center gradient"
@@ -280,7 +311,7 @@ class LoginFormPage extends Component {
                   <MDBAnimation type="fadeInRight" delay=".3s">
                     <MDBCard id="classic-card">
                       <MDBCardBody className="white-text">
-                        <h3 className="text-center">Register</h3>
+                        <h3 className="text-center">Login</h3>
                         <hr className="hr-light" />
                         <form onSubmit={this.handleSubmit}>
                           <label>Your Email: </label>
@@ -323,175 +354,3 @@ class LoginFormPage extends Component {
   }
 }
 
-class ProjectsPage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      hotel1: "A-One Star Hotel",
-      hotel2: "D Varee Jomtien Beach, Pattaya",
-      hotel3: "สวัสดี ซีวิว พัทยา",
-      hotel4: "The Grass Serviced Suites by At Mind",
-      hotel5: "Woraburi Pattaya Resort & Spa",
-      hotel6: "โรงแรม ยู จอมเทียน"
-    };
-  }
-
-  render() {
-    return (
-      <section className="text-center my-5">
-        <h2 className="h1-responsive font-weight-bold my-5">
-          Our Recommended Hotel
-        </h2>
-        {/* <p className="grey-text w-responsive mx-auto mb-5">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit est laborum.
-      </p> */}
-
-        <MDBRow className="text-center">
-          <MDBCol lg="4" md="12" className="mb-lg-6 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000001000269798_wh_140"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">{this.state.hotel1}</h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000001000268480_wh_66"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">
-              {this.state.hotel2}
-              </h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/1627691941882777130_wh_16"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">{this.state.hotel3}</h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-          <MDBCol lg="4" md="12" className="mb-lg-6 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000002100099866_wh_109"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">{this.state.hotel4}</h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000002100764572_wh_77"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">{this.state.hotel5}</h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-          <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
-            <MDBView className="overlay rounded z-depth-1" waves>
-              <img
-                src="https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000002100555532_wh_41"
-                alt=""
-                className="img-fluid"
-              />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
-            </MDBView>
-            <MDBCardBody className="pb-0">
-              <h4 className="font-weight-bold my-3">{this.state.hotel6}</h4>
-              <p className="grey-text">
-                Temporibus autem quibusdam et aut officiis debitis aut rerum
-                necessitatibus saepe eveniet ut et voluptates repudiandae.
-              </p>
-              <button type="button" className="btn btn-outline-primary">
-                Information
-              </button>
-            </MDBCardBody>
-          </MDBCol>
-         
-        </MDBRow>
-      </section>
-    );
-  }
-}
-
-//   export default ClassicFormPage;
