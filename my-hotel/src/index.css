@@ -143,3 +143,80 @@ code {
     rgba(72, 15, 144, 0.4) 100%
   );
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: #fff;
+  margin-bottom: 40px;
+}
+
+.email {
+  color: grey;
+  font-size: 18px;
+}
+
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+#UserLoginFormPage h6 {
+  line-height: 1.2;
+}
+
+#UserLoginFormPage .navbar {
+  background-color: transparent;
+  /* transition: background 0.5s ease-in-out, padding 0.5s ease-in-out; */
+}
+
+#UserLoginFormPage .top-nav-collapse {
+  background: #424f95;
+}
+
+@media (max-width: 768px) {
+  #UserLoginFormPage .navbar:not(.top-nav-collapse) {
+    background: #424f95 !important;
+  }
+}
+
+#UserLoginFormPage label {
+  color: #fff !important;
+}
+
+#UserLoginFormPage .view {
+  background-image: url("https://images.pexels.com/photos/545034/pexels-photo-545034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 94vh;
+}
+
+#UserLoginFormPage .gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    45deg,
+    from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+}

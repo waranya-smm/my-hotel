@@ -7,13 +7,15 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "bootstrap": "^4.4.1",
+    "firebase": "^7.5.0",
     "font-awesome-icons": "^1.6.0",
     "jquery": "^3.4.1",
     "mdbreact": "^4.23.0",
     "popper.js": "^1.16.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-table": "^7.0.0-beta.20"
   },
   "scripts": {
     "start": "react-scripts start",
