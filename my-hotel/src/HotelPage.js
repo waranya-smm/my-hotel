@@ -82,15 +82,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>
@@ -127,15 +119,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>
@@ -170,15 +154,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>
@@ -213,15 +189,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>
@@ -258,15 +226,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>
@@ -301,15 +261,7 @@ export default class HotelPage extends Component {
                     isOpen={this.state.isOpen}
                     onClose={e => this.setState({ isOpen: false })}
                   >
-                    MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                    adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                    MAP: 
                   </Information>
                 </MDBCardBody>
               </MDBCol>

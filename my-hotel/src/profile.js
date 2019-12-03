@@ -21,8 +21,7 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
-  MDBAnimation,
-  MDBInputGroup
+  MDBAnimation
 } from "mdbreact";
 import "./index.css";
 export default class App extends Component {
@@ -39,21 +38,14 @@ export default class App extends Component {
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
   if (isLoggedIn) {
-    return <ClassicFormPage />;
+    return <LoginedFormPage />;
   }
   return <LoginFormPage /> ;
 }
 
-// function OnLogIn(props) {
-//   const onLoggedIn = props.onLoggedIn;
-//   if (onLoggedIn) {
-//     return <LoginedFormPage />;
-//   }
-//   return
-// }
 
 function SigninButton (props) {
-  return <p onClick={props.onClick}>Sign Up</p>;
+  return <p onClick={props.onClick}>Profile</p>;
 }
 
 function SignUPButton(props) {
@@ -69,9 +61,7 @@ class Navbar extends Component {
     collapseID: ""
   };
 
-  setLoggined = () => {
-    this.setLoggined({onLoggedIn: true})
-  }
+
 
   toggleCollapse = collapseID => () =>
     this.setState(prevState => ({
@@ -82,8 +72,6 @@ class Navbar extends Component {
     super(props);
     this.handleSignInClick = this.handleSignInClick.bind(this);
     this.handleSignUPClick = this.handleSignUPClick.bind(this);
-    // this.handleLoginClick = this.handleLoginClick.bind(this);
-    // this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.state = { isLoggedIn: false };
   }
   handleSignInClick() {
@@ -94,13 +82,6 @@ class Navbar extends Component {
     this.setState({ isLoggedIn: false });
   }
 
-  // handleLogoutClick() {
-  //   this.setState({ onLoggedIn: false });
-  // }
-
-  // handleLoginClick() {
-  //   this.setState({ onLoggedIn: true });
-  // }
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
@@ -109,15 +90,10 @@ class Navbar extends Component {
     
 
     if (isLoggedIn) {
-      showState = <SignUPButton onClick={this.handleSignUPClick} />;
+      showState = <LogoutButton onClick={this.handleSignUPClick} />;
     } else {
       showState = <SigninButton onClick={this.handleSignInClick} />;
     }
-
-    // if (onLoggedIn) {
-    //   showState = <LogoutButton onClick={this.handleLogoutClick} />;
-    // } 
-
 
 
     const overlay = (
@@ -131,10 +107,7 @@ class Navbar extends Component {
       <div id="navBar">
         
         <Greeting isLoggedIn={isLoggedIn} />
-        {/* <OnLogIn onLoggedIn={onLoggedIn}/> */}
-        {/* <HotelPage  />
-        <HotelBooking />
-         */}
+  
         <Router>
           {/* left side */}
           <div>
@@ -175,140 +148,6 @@ class Navbar extends Component {
   }
 }
 
-class ClassicFormPage extends Component {
-  state = {
-    collapseID: ""
-  };
-
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-
-  render() {
-    return (
-      <div>
-      
-        
-      <div id="classicformpage">
-        
-        <MDBView>
-          {" "}
-          {/* sign up from*/}
-          <MDBMask
-            style={{ paddingTop: 46 }}
-            className="d-flex justify-content-center align-items-center gradient"
-          >
-            <MDBContainer>
-              <MDBRow>
-                <MDBAnimation
-                  type="fadeInLeft"
-                  delay=".3s"
-                  className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5"
-                >
-                  <h1 style={{ color: "#fff" }}>Sign up</h1>
-                  <hr className="hr-light" />
-                  <h6 style={{ color: "#fff" }}>
-                    กรุณาสมัครสมาชิก เพื่อสิทธิพิเศษที่เหนือกว่า
-                  </h6>
-
-                  <button type="button" className="btn btn-outline-primary">
-                    LEARNMORE
-                  </button>
-                </MDBAnimation>
-
-                <MDBCol
-                  md="8"
-                  xl="4"
-                  className="mb-4"
-                  style={{ color: "#fff", fontSize: 16 }}
-                >
-                  <MDBAnimation type="fadeInRight" delay=".3s">
-                    <MDBCard id="classic-card">
-                      <MDBCardBody className="white-text">
-                        <h3 className="text-center">Register</h3>
-                        <hr className="hr-light" />
-                        <form onSubmit={this.handleSubmit}>
-                          <label>Your First and Last name: </label>
-                          <MDBInputGroup
-                            className="form-control form-control-sm"
-                            inputs={
-                              <>
-                                <input
-                                  className="form-control form-control-sm"
-                                  type="text"
-                                  placeholder="First name"
-                                  required
-                                />
-                                <input
-                                  className="form-control form-control-sm"
-                                  type="text"
-                                  placeholder="Last name"
-                                  required
-                                />
-                              </>
-                            }
-                          />
-
-                          <label>Your Birthdate: </label>
-                          <input
-                            id="bdate"
-                            type="date"
-                            className="form-control form-control-sm"
-                            required
-                          />
-
-                          <label>Your Email: </label>
-                          <input
-                            type="email"
-                            className="form-control form-control-sm"
-                            id="email2"
-                            placeholder="Enter email"
-                            name="email"
-                            required
-                          ></input>
-
-                          <label>Password: </label>
-                          <input
-                            type="password"
-                            className="form-control form-control-sm"
-                            id="password"
-                            placeholder="Enter password"
-                            name="password"
-                            required
-                          ></input>
-
-                          <label>Confirm Password: </label>
-                          <input
-                            type="password"
-                            className="form-control form-control-sm"
-                            id="Cpassword"
-                            placeholder="Enter password"
-                            name="password"
-                            required
-                          ></input>
-                          <input
-                            type="submit"
-                            className="btn btn-primary mt-4"
-                            value="SIGN UP"
-                          ></input>
-                        </form>
-                        <hr className="hr-light" />
-                      </MDBCardBody>
-                    </MDBCard>
-                  </MDBAnimation>
-                </MDBCol>
-              </MDBRow>
-            </MDBContainer>
-          </MDBMask>
-        </MDBView>
-      </div>
-      <HotelPage  />
-       
-      </div>
-    );
-  }
-}
 
 class LoginFormPage extends Component {
   state = {
@@ -435,6 +274,7 @@ class LoginedFormPage extends Component {
 
   render() {
     return (
+      <div>
       <div id="UserLoginFormPage">
         <MDBView>
           <MDBMask
@@ -468,13 +308,14 @@ class LoginedFormPage extends Component {
                     >
                       
                     </BookingShow>
-                    <HotelBooking/>
-                 
+
                 </div>
               </MDBRow>
             </MDBContainer>
           </MDBMask>
         </MDBView>
+        </div>
+        <HotelBooking/>
       </div>
     );
   }

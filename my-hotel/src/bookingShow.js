@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BookingForm from "./bookingForm";
 
 let informStyl = {
   width: "800px",
@@ -30,6 +31,22 @@ let informCloseButtonStyl = {
 };
 
 export default class BookingShow extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      phone: "",
+      email: "",
+      chkIn: "",
+      chkOut: "",
+      people: "",
+      hotel:""
+    };
+  }
+
+
+
+  
   render() {
     let boookingShow = (
       <div style={informStyl}>
@@ -42,24 +59,24 @@ export default class BookingShow extends Component {
           <table>
             <thead>
               <tr>
-                <th>Hotel: </th>
-                <th>...</th>
+                <th >Hotel: </th>
+                <th >{this.state.hotel}</th>
                 
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>เช็คอิน</td>
-                <td>Table cell</td>
+                <td >เช็คอิน</td>
+                <td >Table cell</td>
                 
               </tr>
               <tr>
-                <td>เช็คเอาท์</td>
-                <td>Table cell</td>
+                <td  >เช็คเอาท์</td>
+                <td >Table cell</td>
                 
               </tr>
               <tr>
-                <td>จำนวนผู้เข้าพักต่อห้อง</td>
+                <td >จำนวนผู้เข้าพักต่อห้อง</td>
                 <td>Table cell</td>
                 
               </tr>

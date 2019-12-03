@@ -8,11 +8,37 @@ import Information from "./information";
 import BookingForm from "./bookingForm";
 import { MDBMask, MDBRow, MDBCol, MDBView, MDBCardBody } from "mdbreact";
 import "./index.css";
-export default class HotelPage extends Component {
+export default class HotelBooking extends Component {
   state = {
     isOpen: false,
-    formOpen: false
+    formOpen: false,
+    hotelName: null
   };
+
+  setCategoryStates = (formOpen, hotelName) => {
+    this.setState(
+      {
+        formOpen: formOpen,
+        hotelName: hotelName
+      },
+      () => {
+        /*
+           Add state to the array
+           This callback will be called once the async state update has succeeded
+           So accessing state in this variable will be correct.
+        */
+        this.pushToCategoryArray();
+      }
+    );
+  };
+
+  pushToCategoryArray = () => {
+    //You don't need state, you can simply make these regular JavaScript variables
+    this.categoryArray.push({
+        'formOpen': this.state.formOpen,
+        'hotelName': this.state.hotelName,
+    })
+}
 
   constructor() {
     super();
@@ -50,24 +76,23 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-              
             </MDBView>
             <MDBCardBody className="pb-0">
+              
               <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "A-One Star Hotel" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotel1}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel1}</h4>
               <Star3 />
@@ -89,15 +114,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
@@ -109,7 +126,6 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-              
 
               <a href="#!">
                 <MDBMask overlay="white-slight" />
@@ -117,21 +133,20 @@ export default class HotelPage extends Component {
             </MDBView>
 
             <MDBCardBody className="pb-0">
-            <button
+              <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "D Varee Jomtien Beach" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotel2}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel2}</h4>
               <Star4 />
@@ -152,15 +167,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
@@ -171,28 +178,26 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-             
 
               <a href="#!">
                 <MDBMask overlay="white-slight" />
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-            <button
+              <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "สวัสดี ซีวิว พัทยา" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotel3}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel3}</h4>
               <Star4 />
@@ -213,15 +218,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
@@ -232,28 +229,26 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-             
 
               <a href="#!">
                 <MDBMask overlay="white-slight" />
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-            <button
+              <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "The Grass Serviced Suites by At Mind" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotel4}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel4}</h4>
               <Star5 />
@@ -274,15 +269,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
@@ -293,28 +280,27 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-              
+
               <a href="#!">
                 <MDBMask overlay="white-slight" />
               </a>
             </MDBView>
 
             <MDBCardBody className="pb-0">
-            <button
+              <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "Woraburi Pattaya Resort & Spa" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotel5}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel5}</h4>
               <Star5 />
@@ -336,15 +322,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
@@ -355,28 +333,27 @@ export default class HotelPage extends Component {
                 alt=""
                 className="img-fluid"
               />
-              
 
               <a href="#!">
                 <MDBMask overlay="white-slight" />
               </a>
             </MDBView>
             <MDBCardBody className="pb-0">
-            <button
+              
+              <button
                 style={{ marginTop: "20px", backgroundColor: "#f4522d" }}
                 type="button"
                 className="btn btn-primary btn-sm"
-                onClick={e => this.setState({ formOpen: true })}
+                onClick={e => this.setState({ formOpen: true,hotelName: "โรงแรม ยู จอมเทียน" })}
               >
                 BOOK IN
               </button>
               <BookingForm
                 formOpen={this.state.formOpen}
+                hotelName={this.state.hotelName}
                 onClose={e => this.setState({ formOpen: false })}
               >
-                
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                Hotel: {this.state.hotelName}
               </BookingForm>
               <h4 className="font-weight-bold my-3">{this.state.hotel6}</h4>
               <Star5 />
@@ -397,15 +374,7 @@ export default class HotelPage extends Component {
                 isOpen={this.state.isOpen}
                 onClose={e => this.setState({ isOpen: false })}
               >
-                MAP: adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                vadsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
-                adsfghjkjhgfddfdweregtrhthsfdgadfdfgsd lorem
+                MAP: 
               </Information>
             </MDBCardBody>
           </MDBCol>
